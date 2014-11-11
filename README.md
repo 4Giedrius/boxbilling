@@ -1,7 +1,7 @@
 BoxBilling
 ================================================================================
 
-[![Build Status](https://travis-ci.org/boxbilling/boxbilling.svg)](https://travis-ci.org/boxbilling/boxbilling)
+[![Build Status](https://travis-ci.org/4Giedrius/boxbilling.svg)](https://travis-ci.org/4Giedrius/boxbilling)
 
 Open Source billing software
 
