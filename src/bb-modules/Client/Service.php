@@ -213,21 +213,21 @@ class Service implements InjectionAwareInterface
 
     public function canChangeCurrency(\Model_Client $model, $currency = null)
     {
-        if(!$model->currency) {
+        if (!$model->currency) {
             return true;
         }
 
-        if($model->currency == $currency) {
+        if ($model->currency == $currency) {
             return false;
         }
 
-        $invoice = $this->di['db']->load('Invoice', 'client_id = ?', $model->client_id);
-        if($invoice) {
+        $invoice = $this->di['db']->findOne('Invoice', 'client_id = :client_id', array(':client_id' => $model->id));
+        if ($invoice instanceof \Model_Invoice) {
             throw new \Box_Exception('Currency can not be changed. Client already have invoices issued.');
         }
 
-        $order = $this->di['db']->load('ClientOrder', 'client_id = ?', $model->client_id);
-        if($order) {
+        $order = $this->di['db']->findOne('ClientOrder', 'client_id = :client_id', array(':client_id' => $model->id));
+        if ($order instanceof \Model_ClientOrder) {
             throw new \Box_Exception('Currency can not be changed. Client already have orders.');
         }
 
@@ -366,6 +366,7 @@ class Service implements InjectionAwareInterface
             'currency'    =>  $model->currency,
             'notes'    =>  $model->notes,
             'created_at'    =>  $model->created_at,
+            'document_nr' => $model->document_nr,
         );
 
         if($deep) {
@@ -481,7 +482,7 @@ class Service implements InjectionAwareInterface
         $client->auth_type = isset($data['auth_type']) ? $data['auth_type'] : NULL;
         $client->email = strtolower(trim($data['email']));
         $client->first_name = ucwords($data['first_name']);
-        $client->pass =  sha1($password);
+        $client->pass =  $this->di['password']->hashIt($password);
 
         $client->aid = isset($data['aid']) ? $data['aid'] : NULL ;
         $client->last_name = isset($data['last_name']) ? $data['last_name'] : NULL ;
@@ -582,5 +583,16 @@ class Service implements InjectionAwareInterface
         $stmt->execute(array('id'=>$model->id));
 
         $this->di['db']->trash($model);
+    }
+
+    public function authorizeClient($email, $plainTextPassword)
+    {
+        $model = $this->di['db']->findOne('Client', 'email = ? AND status = ?', array($email, \Model_Client::ACTIVE));
+        if ($model == null){
+            return null;
+        }
+
+        return $this->di['auth']->authorizeUser($model, $plainTextPassword);
+
     }
 }

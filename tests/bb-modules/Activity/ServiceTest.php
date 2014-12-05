@@ -107,12 +107,14 @@ class ServiceTest extends \PHPUnit_Framework_TestCase
     public function testLogEvent()
     {
         $service = new \Box\Mod\Activity\Service();
-        $data    = array();
+        $data    = array(
+            'message' => 'Logging test message'
+        );
 
         $di = new \Box_Di();
         $db = $this->getMockBuilder('Box_Database')->getMock();
 
-        $model = new \Model_ActivityClientEmail();
+        $model = new \Model_ActivitySystem();
         $model->loadBean(new \RedBeanPHP\OODBBean());
         $db->expects($this->atLeastOnce())
             ->method('dispense')
@@ -121,6 +123,7 @@ class ServiceTest extends \PHPUnit_Framework_TestCase
             ->method('store')
             ->will($this->returnValue(array()));
 
+        $di['request'] = $this->getMockBuilder('Box_Request')->getMock();;
         $di['db'] = $db;
         $service->setDi($di);
 
@@ -156,7 +159,7 @@ class ServiceTest extends \PHPUnit_Framework_TestCase
         $di['db'] = $db;
         $service->setDi($di);
 
-        $result = $service->logEmail($data['client_id'], $data['sender'], $data['recipients'], $data['subject'], $data['content_html'], $data['content_text']);
+        $result = $service->logEmail($data['subject'], $data['client_id'], $data['sender'], $data['recipients'], $data['content_html'], $data['content_text']);
         $this->assertTrue($result);
     }
 

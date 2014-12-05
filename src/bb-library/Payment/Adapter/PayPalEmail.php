@@ -134,18 +134,13 @@ class Payment_Adapter_PayPalEmail implements \Box\InjectionAwareInterface
             $data['notify_url']         = $this->config['notify_url'];
             $data['business']           = $this->config['email'];
             $data['cmd']                = '_xclick';
-            $data['amount']             = $this->moneyFormat($invoice['total'], $invoice['currency']);
+            $data['amount']             = $this->moneyFormat($invoice['subtotal'], $invoice['currency']);
             $data['tax']                = $this->moneyFormat($invoice['tax'], $invoice['currency']);
             $data['bn']                 = "PP-BuyNowBF";
             $data['charset']            = "utf-8";
         }
         
-        if($this->config['test_mode']) {
-            $url = 'https://www.sandbox.paypal.com/cgi-bin/webscr';
-        } else {
-            $url = 'https://www.paypal.com/cgi-bin/webscr';
-        }
-        
+        $url = $this->serviceUrl();
         return $this->_generateForm($url, $data);
     }
 
@@ -261,6 +256,15 @@ class Payment_Adapter_PayPalEmail implements \Box\InjectionAwareInterface
         $api_admin->invoice_transaction_update($d);
     }
 
+    private function serviceUrl()
+    {
+        if($this->config['test_mode']) {
+            return 'https://www.sandbox.paypal.com/cgi-bin/webscr';
+        } else {
+            return 'https://www.paypal.com/cgi-bin/webscr';
+        }
+    }
+
     private function _isIpnValid($data)
     {
         // use http_raw_post_data instead of post due to encoding
@@ -270,7 +274,8 @@ class Payment_Adapter_PayPalEmail implements \Box\InjectionAwareInterface
 			$value = urlencode(stripslashes($value));
 			$req .= "&$key=$value";
 		}
-		$ret = $this->download('https://www.paypal.com/cgi-bin/webscr', $req);
+		$url = $this->serviceUrl();
+		$ret = $this->download($url, $req);
 		return $ret == 'VERIFIED';
     }
 

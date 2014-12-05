@@ -24,13 +24,13 @@ class Api_Admin_ActivityTest extends BBDbApiTestCase
     public function testLogDeleteIdNotSetException()
     {
         $this->setExpectedException('Box_Exception');
-        $this->api_admin->log_delete(array());
+        $this->api_admin->activity_log_delete(array());
     }
 
     public function testLogNotFoundException()
     {
         $this->setExpectedException('Box_Exception');
-        $this->api_admin->log_delete(array('id' => 100));
+        $this->api_admin->activity_log_delete(array('id' => 100));
     }
 
     public function testActivityLogGetList()
@@ -56,5 +56,19 @@ class Api_Admin_ActivityTest extends BBDbApiTestCase
             $this->assertArrayHasKey('created_at', $item);
             $this->assertArrayHasKey('updated_at', $item);
         }
+    }
+
+    public function testBatchDelete()
+    {
+        $array = $this->api_admin->activity_log_get_list(array());
+
+        foreach ($array['list'] as $value) {
+            $ids[] = $value['id'];
+        }
+        $result = $this->api_admin->activity_batch_delete(array('ids' => $ids));
+        $array  = $this->api_admin->activity_log_get_list(array());
+
+        $this->assertEquals(0, count($array['list']));
+        $this->assertTrue($result);
     }
 }
