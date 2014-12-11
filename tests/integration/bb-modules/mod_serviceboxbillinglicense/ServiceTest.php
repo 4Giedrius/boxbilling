@@ -70,16 +70,6 @@ class ServiceBoxBillinglicenseTest extends BBDbApiTestCase
         $this->assertTrue($result);
     }
 
-
-    public function testbecomePartner_Exception()
-    {
-        $service = new \Box\Mod\Serviceboxbillinglicense\Service();
-        $service->setDi($this->di);
-
-        $this->setExpectedException('Exception', 'You need to login in order to this api/client/partner/signup page');
-        $service->becomePartner();
-    }
-
     public function testUninstall()
     {
         $service = new \Box\Mod\Serviceboxbillinglicense\Service();
