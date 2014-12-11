@@ -81,7 +81,7 @@ class Admin extends \Api_Abstract
      * @optional string $product_category_id - category id
      *
      * @return int - new product id
-     * @throws Box_Exception 
+     * @throws \Box_Exception
      */
     public function prepare($data)
     {
@@ -135,7 +135,7 @@ class Admin extends \Api_Abstract
      * @optional bool $quantity_in_stock - quantity available for sale. When out of stock, new order can not be placed.
      * 
      * @return boolean
-     * @throws Box_Exception 
+     * @throws \Box_Exception
      */
     public function update($data)
     {
@@ -149,7 +149,7 @@ class Admin extends \Api_Abstract
      * 
      * @param array $priority - id => number key value pairs to define sort order for all products
      * @return boolean
-     * @throws Box_Exception 
+     * @throws \Box_Exception
      */
     public function update_priority($data)
     {
@@ -194,7 +194,7 @@ class Admin extends \Api_Abstract
      * @param string $title - addon title
      * 
      * @return int - new addon id
-     * @throws Box_Exception 
+     * @throws \Box_Exception
      */
     public function addon_create($data)
     {
@@ -217,7 +217,7 @@ class Admin extends \Api_Abstract
      * @param int $id - addon id
      * 
      * @return array
-     * @throws Box_Exception 
+     * @throws \Box_Exception
      */
     public function addon_get($data)
     {
@@ -257,7 +257,7 @@ class Admin extends \Api_Abstract
      * @optional bool $quantity_in_stock - quantity available for sale. When out of stock, new order can not be placed.
      * 
      * @return bool
-     * @throws Box_Exception 
+     * @throws \Box_Exception
      */
     public function addon_update($data)
     {
@@ -319,7 +319,7 @@ class Admin extends \Api_Abstract
      * @optional string $description - description
      * 
      * @return boolean
-     * @throws Box_Exception 
+     * @throws \Box_Exception
      */
     public function category_update($data)
     {
@@ -344,7 +344,7 @@ class Admin extends \Api_Abstract
      * Get category details
      * 
      * @return array
-     * @throws Box_Exception 
+     * @throws \Box_Exception
      */
     public function category_get($data)
     {
@@ -369,7 +369,7 @@ class Admin extends \Api_Abstract
      * 
      * @return int - new category id
      * 
-     * @throws Box_Exception 
+     * @throws \Box_Exception
      */
     public function category_create($data)
     {
@@ -391,7 +391,7 @@ class Admin extends \Api_Abstract
      * 
      * @param int $id - category id
      * @return boolean
-     * @throws Box_Exception 
+     * @throws \Box_Exception
      */
     public function category_delete($data)
     {
@@ -444,7 +444,7 @@ class Admin extends \Api_Abstract
      * @optional string $end_at - date (Y-m-d) when this promo code expires
      * 
      * @return int - new promo code id
-     * @throws Box_Exception 
+     * @throws \Box_Exception
      */
     public function promo_create($data)
     {
@@ -481,7 +481,7 @@ class Admin extends \Api_Abstract
      * @param int $id - promo code id
      * 
      * @return array
-     * @throws Box_Exception 
+     * @throws \Box_Exception
      */
     public function promo_get($data)
     {
@@ -519,7 +519,7 @@ class Admin extends \Api_Abstract
      * @optional int $used - how many times this promo code was already used
      * 
      * @return boolean
-     * @throws Box_Exception 
+     * @throws \Box_Exception
      */
     public function promo_update($data)
     {
@@ -542,7 +542,7 @@ class Admin extends \Api_Abstract
      * @param int $id - promo code id
      * 
      * @return bool
-     * @throws Box_Exception 
+     * @throws \Box_Exception
      */
     public function promo_delete($data)
     {

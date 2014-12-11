@@ -27,7 +27,7 @@ class Admin extends \Api_Abstract
      *
      *
      * @return int - ID of the created form
-     * @throws Box_Exception
+     * @throws \Box_Exception
      */
     public function create_form($data)
     {
@@ -69,7 +69,7 @@ class Admin extends \Api_Abstract
      * @optional int $text_size - Prefered text size
      *
      * @return int - ID of created field
-     * @throws Box_Exception
+     * @throws \Box_Exception
      */
     public function add_field($data)
     {
@@ -94,7 +94,7 @@ class Admin extends \Api_Abstract
      * @param int $id - ID of the form
      *
      * @return array
-     * @throws Box_Exception
+     * @throws \Box_Exception
      */
 
     public function get_form($data)
@@ -113,7 +113,7 @@ class Admin extends \Api_Abstract
      * @param int $form_id - ID of form
      *
      * @return array
-     * @throws Box_Exception
+     * @throws \Box_Exception
      */
     public function get_form_fields($data)
     {
@@ -134,7 +134,7 @@ class Admin extends \Api_Abstract
      * @param int $id - ID of the fields
      *
      * @return array
-     * @throws Box_Exception
+     * @throws \Box_Exception
      */
     public function get_field($data)
     {
@@ -154,7 +154,7 @@ class Admin extends \Api_Abstract
      *
      *
      * @return multidimensional array
-     * @throws Box_Exception
+     * @throws \Box_Exception
      */
     public function get_forms()
     {
@@ -169,7 +169,7 @@ class Admin extends \Api_Abstract
      * @param int $id - ID of the form
      *
      * @return bool
-     * @throws Box_Exception
+     * @throws \Box_Exception
      */
     public function delete_form($data)
     {
@@ -188,7 +188,7 @@ class Admin extends \Api_Abstract
      * @param int $id - ID of the field
      *
      * @return bool
-     * @throws Box_Exception
+     * @throws \Box_Exception
      */
     public function delete_field($data)
     {
@@ -229,7 +229,7 @@ class Admin extends \Api_Abstract
      * @optional int $text_size - Prefered text size
      *
      * @return int - ID of the field
-     * @throws Box_Exception
+     * @throws \Box_Exception
      */
     public function update_field($data)
     {
@@ -268,7 +268,7 @@ class Admin extends \Api_Abstract
      *
      *
      * @return int - ID of the new form
-     * @throws Box_Exception
+     * @throws \Box_Exception
      */
     public function copy_form($data)
     {

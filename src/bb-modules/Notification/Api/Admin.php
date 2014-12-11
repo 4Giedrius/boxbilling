@@ -40,7 +40,7 @@ class Admin extends \Api_Abstract
      *
      * @param int $id - message id
      * @return array
-     * @throws Box_Exception
+     * @throws \Box_Exception
      */
     public function get($data)
     {
@@ -88,7 +88,7 @@ class Admin extends \Api_Abstract
      *
      * @param int $id - message id
      * @return boolean
-     * @throws Box_Exception
+     * @throws \Box_Exception
      */
     public function delete($data)
     {
@@ -109,7 +109,7 @@ class Admin extends \Api_Abstract
      * Remove all notification messages
      *
      * @return boolean
-     * @throws Box_Exception
+     * @throws \Box_Exception
      */
     public function delete_all()
     {

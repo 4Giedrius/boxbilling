@@ -86,7 +86,7 @@ class Admin extends \Api_Abstract
      * 
      * @return bool
      * 
-     * @throws Box_Exception
+     * @throws \Box_Exception
      * @throws Exception 
      */
     public function update_core($data)
@@ -112,7 +112,7 @@ class Admin extends \Api_Abstract
      * 
      * @return array
      * 
-     * @throws Box_Exception
+     * @throws \Box_Exception
      * @throws Exception 
      */
     public function update($data)
@@ -131,7 +131,7 @@ class Admin extends \Api_Abstract
      * 
      * @return array
      * 
-     * @throws Box_Exception
+     * @throws \Box_Exception
      * @throws Exception 
      */
     public function activate($data)
@@ -157,7 +157,7 @@ class Admin extends \Api_Abstract
      * 
      * @return bool - true
      * 
-     * @throws Box_Exception
+     * @throws \Box_Exception
      * @throws Exception 
      */
     public function deactivate($data)
@@ -201,7 +201,7 @@ class Admin extends \Api_Abstract
      * @param string $type - extensions type: mod, theme, gateway ...
      * @param string $id - extension id
      * @return array
-     * @throws Box_Exception 
+     * @throws \Box_Exception
      */
     public function install($data)
     {
@@ -263,7 +263,7 @@ class Admin extends \Api_Abstract
      * @optional string $any - Any variable passed to this method is config parameter
      * 
      * @return bool
-     * @throws Box_Exception 
+     * @throws \Box_Exception
      */
     public function config_save($data)
     {

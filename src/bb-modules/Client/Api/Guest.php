@@ -137,7 +137,7 @@ class Guest extends \Api_Abstract
      * @param string $password - client password
      * 
      * @return array - session data
-     * @throws Box_Exception 
+     * @throws \Box_Exception
      */
     public function login($data)
     {
@@ -182,7 +182,7 @@ class Guest extends \Api_Abstract
      * 
      * @param string $email - client email
      * @return boolean
-     * @throws Box_Exception 
+     * @throws \Box_Exception
      */
     public function reset_password($data)
     {
@@ -224,7 +224,7 @@ class Guest extends \Api_Abstract
      * 
      * @param string $hash - hash received in email
      * @return boolean
-     * @throws Box_Exception 
+     * @throws \Box_Exception
      */
     public function confirm_reset($data)
     {
@@ -263,7 +263,7 @@ class Guest extends \Api_Abstract
      * @param string $country - Country CODE: FR - France etc.
      * @param string $vat - VAT number
      * 
-     * @return bool- true if VAT is valid, false if not
+     * @return bool - true if VAT is valid, false if not
      */
     public function is_vat($data)
     {

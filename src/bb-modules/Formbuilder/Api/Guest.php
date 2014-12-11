@@ -24,7 +24,7 @@ class Guest extends \Api_Abstract
      * @param int $product_id - Product id
      * 
      * @return array
-     * @throws Box_Exception 
+     * @throws \Box_Exception
      */
     public function get($data)
     {

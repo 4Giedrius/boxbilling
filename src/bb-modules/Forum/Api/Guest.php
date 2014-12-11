@@ -62,7 +62,7 @@ class Guest extends \Api_Abstract
      * @param int $id - forum id
      *
      * @return array
-     * @throws Box_Exception
+     * @throws \Box_Exception
      */
     public function get($data)
     {
@@ -114,7 +114,7 @@ class Guest extends \Api_Abstract
      *
      * @param int $id - topic id
      * @return array
-     * @throws Box_Exception
+     * @throws \Box_Exception
      */
     public function get_topic($data)
     {
@@ -146,7 +146,7 @@ class Guest extends \Api_Abstract
      *
      * @param int $forum_topic_id - topic id
      * @return array
-     * @throws Box_Exception
+     * @throws \Box_Exception
      */
     public function get_topic_message_list($data)
     {
@@ -171,7 +171,7 @@ class Guest extends \Api_Abstract
      *
      * @param string $q - query string
      * @return array - paginated list of results
-     * @throws Box_Exception
+     * @throws \Box_Exception
      */
     public function search($data)
     {

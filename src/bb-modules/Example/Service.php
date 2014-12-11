@@ -40,7 +40,7 @@ class Service
      * database table might be enough.
      *
      * @return bool
-     * @throws Box_Exception
+     * @throws \Box_Exception
      */
     public function install()
     {
@@ -56,7 +56,7 @@ class Service
      * Method to uninstall module.
      * 
      * @return bool
-     * @throws Box_Exception
+     * @throws \Box_Exception
      */
     public function uninstall()
     {
@@ -71,7 +71,7 @@ class Service
      * 
      * @param array $manifest - information about new module version
      * @return bool
-     * @throws Box_Exception
+     * @throws \Box_Exception
      */
     public function update($manifest)
     {
@@ -84,7 +84,7 @@ class Service
      * Usually there is one paginated list per module
      * 
      * @param array $data
-     * @return array() = list of 2 parameters: array($sql, $params)
+     * @return array = list of 2 parameters: array($sql, $params)
      */
     public function getSearchQuery($data)
     {
