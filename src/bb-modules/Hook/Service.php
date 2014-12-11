@@ -128,7 +128,7 @@ class Service implements InjectionAwareInterface
      * @param string $mod - module name where hook is located
      *
      * @return boolean
-     * @throws Box_Exception
+     * @throws \Box_Exception
      */
     private function connect($data)
     {

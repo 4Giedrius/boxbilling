@@ -51,7 +51,7 @@ class Guest extends \Api_Abstract
      * Retrieve extension public settings
      *
      * @param string $ext - extension name
-     * @throws Box_Exception
+     * @throws \Box_Exception
      * @return array
      */
     public function settings($data)

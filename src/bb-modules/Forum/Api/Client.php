@@ -62,7 +62,7 @@ class Client extends \Api_Abstract
      * @param int $id - forum id
      *
      * @return array
-     * @throws Box_Exception
+     * @throws \Box_Exception
      */
     public function get($data)
     {
@@ -108,7 +108,7 @@ class Client extends \Api_Abstract
      *
      * @param int $id - topic id
      * @return array
-     * @throws Box_Exception
+     * @throws \Box_Exception
      */
     public function get_topic($data)
     {
@@ -146,7 +146,7 @@ class Client extends \Api_Abstract
      * @optional string $status - initial topic status
      *
      * @return int - new topic id
-     * @throws Box_Exception
+     * @throws \Box_Exception
      */
     public function start_topic($data)
     {
@@ -217,7 +217,7 @@ class Client extends \Api_Abstract
      *
      * @param int $forum_topic_id - topic id
      * @return array
-     * @throws Box_Exception
+     * @throws \Box_Exception
      */
     public function get_topic_message_list($data)
     {
@@ -238,7 +238,7 @@ class Client extends \Api_Abstract
      * @param string $message - topic message
      *
      * @return id
-     * @throws Box_Exception
+     * @throws \Box_Exception
      */
     public function post_message($data)
     {
@@ -288,7 +288,7 @@ class Client extends \Api_Abstract
      * Check if current client is subscribed to forum notifications
      *
      * @return bool
-     * @throws Box_Exception
+     * @throws \Box_Exception
      */
     public function is_subscribed($data)
     {
@@ -317,7 +317,7 @@ class Client extends \Api_Abstract
      * Unsubscribe client from topic notifications
      *
      * @return bool
-     * @throws Box_Exception
+     * @throws \Box_Exception
      */
     public function unsubscribe($data)
     {
@@ -348,7 +348,7 @@ class Client extends \Api_Abstract
      *
      * @param int $id - forum topic id
      * @return bool
-     * @throws Box_Exception
+     * @throws \Box_Exception
      */
     public function subscribe($data)
     {
@@ -410,7 +410,7 @@ class Client extends \Api_Abstract
      *
      * @param int $id - forum topic id
      * @return bool
-     * @throws Box_Exception
+     * @throws \Box_Exception
      */
     public function is_favorite($data)
     {
@@ -440,7 +440,7 @@ class Client extends \Api_Abstract
      *
      * @param int $id - forum topic id
      * @return boolean
-     * @throws Box_Exception
+     * @throws \Box_Exception
      * @throws Exception
      */
     public function favorite_add($data)
@@ -475,7 +475,7 @@ class Client extends \Api_Abstract
      *
      * @param int $id - forum topic id
      * @return boolean
-     * @throws Box_Exception
+     * @throws \Box_Exception
      */
     public function favorite_remove($data)
     {
@@ -505,7 +505,7 @@ class Client extends \Api_Abstract
      * Forum profile
      *
      * @return array
-     * @throws Box_Exception
+     * @throws \Box_Exception
      */
     public function profile($data)
     {

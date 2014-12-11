@@ -386,7 +386,7 @@ class ServiceTransaction implements InjectionAwareInterface
      * @since 2.9.11
      * @param type $id
      * @return mixed
-     * @throws Box_Exception
+     * @throws \Box_Exception
      */
     public function processTransaction($id)
     {

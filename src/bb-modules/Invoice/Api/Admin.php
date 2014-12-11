@@ -584,7 +584,7 @@ class Admin extends \Api_Abstract
      * 
      * @param int $id - gateway id
      * @return array
-     * @throws Box_Exception 
+     * @throws \Box_Exception
      */
     public function gateway_get($data)
     {
@@ -604,7 +604,7 @@ class Admin extends \Api_Abstract
      * 
      * @param int $id - id of gateway to be copied
      * @return int - new id of gateway
-     * @throws Box_Exception 
+     * @throws \Box_Exception
      */
     public function gateway_copy($data)
     {
@@ -630,7 +630,7 @@ class Admin extends \Api_Abstract
      * @optional bool $test_mode - flag to enable or disable test mode for gateway
      * 
      * @return boolean
-     * @throws Box_Exception 
+     * @throws \Box_Exception
      */
     public function gateway_update($data)
     {
@@ -649,7 +649,7 @@ class Admin extends \Api_Abstract
      * 
      * @param int $id - gateway id
      * @return boolean
-     * @throws Box_Exception 
+     * @throws \Box_Exception
      */
     public function gateway_delete($data)
     {
@@ -697,7 +697,7 @@ class Admin extends \Api_Abstract
      * @optional string $rel_id - related item id
      * 
      * @return int - id
-     * @throws Box_Exception 
+     * @throws \Box_Exception
      */
     public function subscription_create($data)
     {
@@ -730,7 +730,7 @@ class Admin extends \Api_Abstract
      * @optional string $currency - subscription currency
      * 
      * @return boolean
-     * @throws Box_Exception 
+     * @throws \Box_Exception
      */
     public function subscription_update($data)
     {
@@ -751,7 +751,7 @@ class Admin extends \Api_Abstract
      * @param string $sid - subscription id on payment gateway - required if id is not passed
      * 
      * @return array
-     * @throws Box_Exception 
+     * @throws \Box_Exception
      */
     public function subscription_get($data)
     {
@@ -786,7 +786,7 @@ class Admin extends \Api_Abstract
      * @param int $id - subscription id
      * 
      * @return boolean
-     * @throws Box_Exception 
+     * @throws \Box_Exception
      */
     public function subscription_delete($data)
     {
@@ -806,7 +806,7 @@ class Admin extends \Api_Abstract
      * @param int $id - tax id
      * 
      * @return boolean
-     * @throws Box_Exception 
+     * @throws \Box_Exception
      */
     public function tax_delete($data)
     {

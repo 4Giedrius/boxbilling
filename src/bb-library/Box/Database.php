@@ -155,7 +155,7 @@ class Box_Database implements InjectionAwareInterface
      * @param int $id
      * @param string $message
      * @return \RedBean_SimpleModel
-     * @throws Box_Exception
+     * @throws \Box_Exception
      */
     public function getExistingModelById($modelName, $id, $message = "Model not found")
     {
