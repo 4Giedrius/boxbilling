@@ -11,6 +11,9 @@
  */
 
 
+/**
+ * @method void debug() logs debug message
+ */
 class Box_Log
 {
     const EMERG   = 0;  // Emergency: system is unusable

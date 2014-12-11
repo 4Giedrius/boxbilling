@@ -16,14 +16,14 @@ class Box_LogDb
     /**
      * $service - module service class
      *
-     * @var object $service
+     * @var object|string $service
      */
     protected $service = null;
 
     /**
      * Class constructor
      *
-     * @param object $service - module service class object
+     * @param object|string $service - module service class object or name
      */
     public function __construct($service)
     {
