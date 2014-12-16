@@ -24,6 +24,8 @@
                 <directory>src/bb-library/Registrar/includes</directory>
                 <directory>src/bb-modules/Filemanager/src</directory>
                 <directory>src/bb-modules/Servicecentovacast/ccapiclient</directory>
+                <directory>src/bb-library/php-gettext</directory>
+                <directory>src/bb-themes/huraga/assets/js/plugins/elFinder/phpt</directory>
             </exclude>
         </whitelist>
     </filter>
