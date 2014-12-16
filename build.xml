@@ -103,7 +103,7 @@
 
     <target name="coveralls">
         <exec executable="src/bb-vendor/bin/phpunit" failonerror="true">
-            <arg line="--coverage-clover ${build.dir}/logs/clover.xml tests/" />
+            <arg line="--testsuite excludeVendorFiles --coverage-clover ${build.dir}/logs/clover.xml tests/" />
         </exec>
     </target>
 
