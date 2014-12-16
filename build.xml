@@ -102,8 +102,8 @@
     </target>
 
     <target name="coveralls">
-        <exec executable="src/bb-vendor/bin/phpunit --coverage-clover ${build.dir}/logs/clover.xml" failonerror="true">
-            <arg line="tests/" />
+        <exec executable="src/bb-vendor/bin/phpunit" failonerror="true">
+            <arg line="--coverage-clover ${build.dir}/logs/clover.xml tests/" />
         </exec>
     </target>
 
