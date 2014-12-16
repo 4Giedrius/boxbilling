@@ -17,6 +17,7 @@
             <exclude>
                 <file>src/rb.php</file>
                 <directory>src/bb-vendor</directory>
+                <directory>src/bb-data</directory>
             </exclude>
         </whitelist>
     </filter>
